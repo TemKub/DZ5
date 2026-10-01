@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div {
+    width: 100%;
+    padding: 20px;
+}
+button {
+    width: 70px;
+    font-size: 20px;
+    gap: 10px
+}

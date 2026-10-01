@@ -12,6 +12,7 @@ console.log(convertEMPERATURE(68, false));
 
 //Задача 1.2 - Проверка пароля
 function validatePassword(password) {
+
     if (password.length >= 8 && /[a-zA-Z]/.test(password) && /[0-9]/.test(password)) {
         return true;
     } else {
@@ -48,23 +49,24 @@ const num2 = document.querySelector("#num2");
 const buttons = document.querySelectorAll(".operation-btn");
 const result = document.querySelector("#result");
 
-let count = 0;
+buttons.forEach(function(button) {
+    button.addEventListener("click", function() {
 
-buttons.addEventListener("click", function(num1, num2, operationBtn) {
-    if (operationBtn === "+") {
-        return num1 + num2;
-    }
-    else if (operationBtn === "-") {
-        return num1 - num2;
-    }
-    else if (operationBtn === "*") {
-        return num1 * num2;
-    }
-    else if (operationBtn === "/") {
-        return num1 / num2;
-    }
-})
-console.log(result);
+        const a = Number(num1.value);
+        const b = Number(num2.value);
+        const operation = button.textContent;
+
+        if (operation === "+") {
+            result.textContent = a + b;
+        } else if (operation === "-") {
+            result.textContent = a - b;
+        } else if (operation === "×") {
+            result.textContent = a * b;
+        } else if (operation === "÷") {
+            result.textContent = a / b;
+        }
+    });
+});
 
 
 
